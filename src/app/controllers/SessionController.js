@@ -1,5 +1,6 @@
 import * as Yup from "yup"
 import User from "../models/User"
+import jwt from "jsonwebtoken"
 
 class SessionController {
     async store(request, response) {
@@ -37,6 +38,7 @@ class SessionController {
 
         if(!isSamePassword) {
             return emailOrPasswordIncorrect()
+        
         }
 
         console.log(isSamePassword)
@@ -48,7 +50,8 @@ class SessionController {
                 id:user.id, 
                 name: user.name, 
                 email, 
-                admin: user.admin 
+                admin: user.admin,
+               
             }) 
     } 
 }
