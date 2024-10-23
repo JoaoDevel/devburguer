@@ -21,8 +21,9 @@ module.exports = {
     },
     category: {
       type: Sequelize.STRING,
-      allowNull: false,
+      allowNull: false, 
     },
+  
     path: {
       type: Sequelize.STRING,
       allowNull: false,
